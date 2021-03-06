@@ -1,5 +1,4 @@
 export const request = async (url) => {
-  console.log(encodeURIComponent(url));
   try {
     const response = await fetch(url, {
       method: 'GET',
