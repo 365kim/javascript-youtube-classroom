@@ -25,11 +25,11 @@ export default class SearchModel {
       pageToken: this.nextPageToken,
     };
 
-    console.log('options', option);
+    console.log('options', options);
 
-    const queryStringFlattened = Object.entries(options)
-      .map(([key, value]) => `${key}=${value}`)
-      .join('&');
+    const queryStringFlattened = Object.keys(options)
+      .map((key) => `&${key}=${options[key]}`)
+      .join('');
 
     console.log(encodeURI(`${API_SEARCH_ENDPOINT}?${queryStringFlattened}`));
     return encodeURI(`${API_SEARCH_ENDPOINT}?${queryStringFlattened}`);
@@ -42,7 +42,7 @@ export default class SearchModel {
   }
 
   processJSON(rawData) {
-    console.log('awData.nextPageToken', rawData.nextPageToken);
+    console.log('awData.nextPageToken', awData.nextPageToken);
     this.nextPageToken = rawData.nextPageToken;
 
     return rawData.items.map((item) => ({
