@@ -18,7 +18,7 @@ export default class SearchModel {
   getSearchApiURI() {
     const options = {
       part: PART_TYPE,
-      q: this.keyword,
+      q: encodeURIComponent(this.keyword),
       type: SEARCH_TYPE_VIDEO,
       maxResults: MAX_RESULT_COUNT,
       regionCode: REGION_CODE,
@@ -29,7 +29,7 @@ export default class SearchModel {
       .map(([key, value]) => `${key}=${value}`)
       .join('&');
 
-    return `encodeURIComponent(${API_SEARCH_ENDPOINT}?${queryStringFlattened})`;
+    return `${API_SEARCH_ENDPOINT}?${queryStringFlattened}`;
   }
 
   requestSearchResult() {
