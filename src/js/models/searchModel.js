@@ -24,7 +24,6 @@ export default class SearchModel {
       regionCode: REGION_CODE,
       pageToken: this.nextPageToken,
     };
-    console.log(options);
 
     const queryStringFlattened = Object.entries(options)
       .map(([key, value]) => `${key}=${value}`)
