@@ -34,10 +34,7 @@ export default class SearchModel {
   }
 
   requestSearchResult() {
-    return request({
-      url: this.getSearchApiURI(),
-      method: 'GET',
-    }).then((response) => {
+    return request(this.getSearchApiURI(), 'GET').then((response) => {
       this.setSearchResult(response);
     });
   }

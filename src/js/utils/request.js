@@ -1,4 +1,4 @@
-export const request = async ({ url, method }) => {
+export const request = async (url, method) => {
   try {
     const response = await fetch(url, { method });
     const json = await response.json();
