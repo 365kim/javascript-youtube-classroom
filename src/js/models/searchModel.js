@@ -29,9 +29,9 @@ export default class SearchModel {
     const queryStringFlattened = Object.entries(options)
     .map(([key, value]) => `${key}=${value}`)
     .join('&');
-    console.log(queryStringFlattened);
+    console.log(encodeURIComponent(queryStringFlattened));
 
-    return `${API_SEARCH_ENDPOINT}?${encodeURI(queryStringFlattened)}`;
+    return `${API_SEARCH_ENDPOINT}?${encodeURIComponent(queryStringFlattened)}`;
   }
 
   requestSearchResult() {
