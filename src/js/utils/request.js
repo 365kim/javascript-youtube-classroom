@@ -1,7 +1,7 @@
-export const request = async (url) => {
+export const request = async (url, method) => {
   try {
     const response = await fetch(url, {
-      method: 'GET',
+      method,
     });
     const json = await response.json();
 
