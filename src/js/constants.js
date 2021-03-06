@@ -1,4 +1,5 @@
-export const API_SEARCH_ENDPOINT = 'https://www.googleapis.com/youtube/v3/search';
+// export const API_SEARCH_ENDPOINT = 'https://www.googleapis.com/youtube/v3/search';
+export const API_SEARCH_ENDPOINT = 'https://suspicious-tesla-29e2bd.netlify.app//.netlify/functions/fetchSearcbAPI';
 export const YOUTUBE_VIDEO_ENDPOINT = 'https://www.youtube.com/embed/';
 export const YOUTUBE_CHANNEL_ENDPOINT = 'https://www.youtube.com/channel/';
 export const PART_TYPE = 'snippet';
