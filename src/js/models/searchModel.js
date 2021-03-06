@@ -29,12 +29,12 @@ export default class SearchModel {
       .map(([key, value]) => `${key}=${value}`)
       .join('&');
 
-    console.log(`${API_SEARCH_ENDPOINT}?${queryStringFlattened}`);
-    return `${API_SEARCH_ENDPOINT}?${queryStringFlattened}`;
+    console.log(encodeURI(`${API_SEARCH_ENDPOINT}?${queryStringFlattened}`));
+    return encodeURI(`${API_SEARCH_ENDPOINT}?${queryStringFlattened}`);
   }
 
   requestSearchResult() {
-    return request(this.getSearchApiURI(), 'GET').then((response) => {
+    return request(this.getSearchApiURI()).then((response) => {
       this.setSearchResult(response);
     });
   }
