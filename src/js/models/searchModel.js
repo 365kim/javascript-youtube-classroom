@@ -24,10 +24,12 @@ export default class SearchModel {
       regionCode: REGION_CODE,
       pageToken: this.nextPageToken,
     };
-
+    console.log(options);
+    
     const queryStringFlattened = Object.entries(options)
-      .map(([key, value]) => `${key}=${value}`)
-      .join('&');
+    .map(([key, value]) => `${key}=${value}`)
+    .join('&');
+    console.log(queryStringFlattened);
 
     return `${API_SEARCH_ENDPOINT}?${queryStringFlattened}`;
   }
