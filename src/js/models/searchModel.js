@@ -25,6 +25,8 @@ export default class SearchModel {
       pageToken: this.nextPageToken,
     };
 
+    console.log('options', option);
+
     const queryStringFlattened = Object.entries(options)
       .map(([key, value]) => `${key}=${value}`)
       .join('&');
@@ -40,6 +42,7 @@ export default class SearchModel {
   }
 
   processJSON(rawData) {
+    console.log('awData.nextPageToken', awData.nextPageToken);
     this.nextPageToken = rawData.nextPageToken;
 
     return rawData.items.map((item) => ({
