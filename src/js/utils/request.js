@@ -1,13 +1,16 @@
 export const request = async (url, method) => {
+  // url = 'https://silly-pare-91b3f2.netlify.app/.netlify/functions/fetchYoutubeAPI/';
+
   try {
-    const response = await fetch(url, { method });
-    console.log('res', response);
-    console.log('res.txt', response.statusText);
-    if (!response.ok) {
-      throw Error(response.statusText);
-    }
+    const response = await fetch(url, {
+      method,
+      headers: {
+        origin: 'https://suspicious-tesla-29e2bd.netlify.app/.netlify/functions/search',
+      },
+    });
     const json = await response.json();
     console.log(json);
+    console.log(response);
     if (!response.ok) {
       throw Error(response.statusText);
     }
