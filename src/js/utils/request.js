@@ -6,8 +6,12 @@ export const request = async (url, method) => {
     if (!response.ok) {
       throw Error(response.statusText);
     }
-    console.log('return json', response.json());
-    return response.json();
+    const json = await response.json();
+    console.log(json);
+    if (!response.ok) {
+      throw Error(response.statusText);
+    }
+    return json;
   } catch (e) {
     console.error(e);
   }
