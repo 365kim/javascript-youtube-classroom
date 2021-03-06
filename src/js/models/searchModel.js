@@ -31,7 +31,7 @@ export default class SearchModel {
     .join('&');
     console.log(queryStringFlattened);
 
-    return encodeURI(`${API_SEARCH_ENDPOINT}?${queryStringFlattened}`);
+    return `${API_SEARCH_ENDPOINT}?${encodeURI(queryStringFlattened)}`;
   }
 
   requestSearchResult() {
