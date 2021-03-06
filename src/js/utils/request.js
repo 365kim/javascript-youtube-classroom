@@ -2,11 +2,8 @@ export const request = async (url) => {
   try {
     const response = await fetch(url, {
       method: 'GET',
-      'Accept-Charset': 'utf-8',
     });
     const json = await response.json();
-    console.log(json);
-    console.log(response);
 
     if (!response.ok) {
       throw Error(response.statusText);
