@@ -25,10 +25,10 @@ export default class SearchModel {
       pageToken: this.nextPageToken,
     };
     console.log(options);
-    
+
     const queryStringFlattened = Object.entries(options)
-    .map(([key, value]) => `${key}=${value}`)
-    .join('&');
+      .map(([key, value]) => `${key}=${value}`)
+      .join('&');
     console.log(encodeURIComponent(queryStringFlattened));
 
     return `${API_SEARCH_ENDPOINT}?${encodeURIComponent(queryStringFlattened)}`;
