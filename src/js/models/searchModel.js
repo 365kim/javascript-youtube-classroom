@@ -42,10 +42,7 @@ export default class SearchModel {
   }
 
   processJSON(rawData) {
-    console.log(rawData);
-
     rawData = JSON.stringify(rawData);
-    console.log('rawData.nextPageToken', rawData.nextPageToken);
     this.nextPageToken = rawData.nextPageToken;
 
     return rawData.items.map((item) => ({
