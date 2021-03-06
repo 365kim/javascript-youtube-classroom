@@ -13,7 +13,6 @@ export const request = async (url) => {
     }
     return json;
   } catch (e) {
-    console.log(response);
     console.error(e);
   }
 };
