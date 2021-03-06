@@ -1,10 +1,6 @@
-export const request = async (url) => {
-  console.log(encodeURIComponent(url));
+export const request = async ({ url, method }) => {
   try {
-    const response = await fetch(url, {
-      method: 'GET',
-      'Accept-Charset': 'utf-8',
-    });
+    const response = await fetch(url, method);
     const json = await response.json();
     console.log(json);
     console.log(response);
