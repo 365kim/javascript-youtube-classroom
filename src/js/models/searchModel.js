@@ -29,8 +29,7 @@ export default class SearchModel {
       .map(([key, value]) => `${key}=${value}`)
       .join('&');
 
-    console.log(`${API_SEARCH_ENDPOINT}?${queryStringFlattened}`);
-    return `${API_SEARCH_ENDPOINT}?${queryStringFlattened}`;
+    return `encodeURIComponent(${API_SEARCH_ENDPOINT}?${queryStringFlattened})`;
   }
 
   requestSearchResult() {
