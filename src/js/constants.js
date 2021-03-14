@@ -2,7 +2,7 @@ export const MAX_RECENT_KEYWORD_COUNT = 3;
 export const MAX_VIDEO_STORAGE_CAPACITY = 100;
 
 export const YOUTUBE_API = Object.freeze({
-  SEARCH_ENDPOINT: 'https://suspicious-tesla-29e2bd.netlify.app/.netlify/functions/fetchYoutubeAPI/search',
+  SEARCH_ENDPOINT: 'https://365kim.netlify.app/youtube/search',
   PART_TYPE: 'snippet',
   MAX_RESULT_COUNT: 10,
   SEARCH_TYPE_VIDEO: 'video',
